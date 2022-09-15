@@ -103,11 +103,17 @@ class Conta:
         return False
 
     def fazer_pix(self, chave_pix_destino:str, qtd:float, banco_destino:Banco) -> bool:
-        '''Dada um objeto de conta origem, e uma chave pix destino, e quantidade da transferencia, fazer redução no saldo de uma conta e aumento de saldo na conta destino'''
-        pass
-        if self.saldo >= qtd:
+
+    if self.saldo >= qtd:
+      for cliente in banco_destino.lista_clientes:
+        if chave_pix_destino in cliente.chave_pix:
 
           self.saldo -= qtd
+          cliente.saldo += qtd
+
+          return True
+
+    return False
     
     def exibir_info(self):
 
