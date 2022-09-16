@@ -106,7 +106,7 @@ class Conta:
 
     if self.saldo >= qtd:
       for cliente in banco_destino.lista_clientes:
-        if chave_pix_destino in cliente.chave_pix:
+        if chave_pix_destino == cliente.chave_pix:
 
           self.saldo -= qtd
           cliente.saldo += qtd
