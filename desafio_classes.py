@@ -180,7 +180,7 @@ class Banco:
 
         for cliente in self.lista_clientes:
 
-            if cliente.exibir_cpf() == conta:
+            if cliente == conta:
 
                 return cliente.exibir_renda() * 3
 
