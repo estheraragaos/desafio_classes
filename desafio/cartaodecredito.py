@@ -11,7 +11,7 @@ class CartaoDeCredito:
 
     def comprar(self, valor_compra:float) -> bool:
         '''Checar limite, se é possivel realizar a compra, reduzir limite, etc'''
-        
+
         if self.limite_atual >= valor_compra:
 
             self.limite_atual -= valor_compra
@@ -19,3 +19,8 @@ class CartaoDeCredito:
             return True
 
         return False
+
+
+    def consultar_valor_fatura(self):
+           
+        return self.limite_cartao - self.limite_atual
