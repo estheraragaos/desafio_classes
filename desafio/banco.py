@@ -33,3 +33,14 @@ class Banco:
                 return conta
 
         return None
+
+    def analisar_credito(self, conta: Conta) -> float:
+        '''Dada renda de uma conta, definir regras que retornem um limite adequado para o cliente'''
+
+        for cliente in self.lista_clientes:
+
+            if cliente == conta:
+
+                return cliente.renda * 3
+
+        return False
