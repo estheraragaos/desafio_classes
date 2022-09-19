@@ -14,6 +14,16 @@ class Conta:
         self.lista_cartoes_de_credito = list()
 
 
+    def sacar_dinheiro(self, qtd:float) -> bool:
+
+        if self.saldo >= qtd:
+
+            self.saldo -=  qtd
+
+            return True
+
+        return False
+        
     def depositar_dinheiro(self, qtd:float) -> bool:
         
         self.saldo += qtd
