@@ -12,4 +12,10 @@ class Conta:
         self.saldo     = saldo
 
         self.lista_cartoes_de_credito = list()
+
+
+    def depositar_dinheiro(self, qtd:float) -> bool:
         
+        self.saldo += qtd
+
+        return True
