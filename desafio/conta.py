@@ -41,3 +41,13 @@ class Conta:
         self.saldo += qtd
 
         return True
+
+    def criar_alterar_chave_pix(self, chave_pix:str) -> bool:
+        
+        if self.chave_pix == chave_pix:
+
+            return False 
+
+        self.chave_pix = chave_pix
+
+        return True
