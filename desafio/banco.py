@@ -22,3 +22,14 @@ class Banco:
             )
 
         return True
+
+    def acessar_conta(self, cpf: str, senha: str) -> Conta:
+        '''Dado um cpf e senha, procurar a conta na lista de clientes e retornar a conta'''
+
+        for conta in self.lista_clientes:
+
+            if conta.cpf == cpf and conta.senha == senha:
+
+                return conta
+
+        return None
