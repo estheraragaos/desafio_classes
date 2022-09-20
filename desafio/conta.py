@@ -35,6 +35,21 @@ class Conta:
         return True
 
 
+    def pagar_fatura_de_cartao(self, cartao:CartaoDeCredito) -> bool:
+        
+        valor_fatura = cartao.consultar_valor_fatura()
+
+        if self.saldo >= valor_fatura:
+
+            self.saldo -= valor_fatura
+
+            cartao.limite_atual += valor_fatura
+
+            return True
+
+        return False
+
+
     def pagar_boleto(self, valor_boleto:float) -> bool:
 
         if self.saldo >= valor_boleto:
