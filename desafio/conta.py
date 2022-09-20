@@ -1,3 +1,7 @@
+from cartaodecredito import CartaoDeCredito
+import random
+
+
 class Conta:
 
 
@@ -12,6 +16,23 @@ class Conta:
         self.saldo     = saldo
 
         self.lista_cartoes_de_credito = list()
+
+    def criar_cartao_de_credito(self, banco:'Banco') -> bool:
+        '''Criar objeto cartao de credito na conta, dados limite e nome do cartão de crédito, chamará metodo de análise de crédito do banco
+        para definir limite'''
+
+        nome_do_cartao = 'Mastercard' + str(random.randint(1, 100))
+        limite = banco.analisar_credito(self)
+
+        cartao_de_credito = CartaoDeCredito(nome_do_cartao, limite)
+
+        for cartao in self.lista_cartoes_de_credito:
+            if cartao_de_credito.nome_cartao == cartao.nome_cartao:
+                return False
+
+        self.lista_cartoes_de_credito.append(cartao_de_credito)
+
+        return True
 
 
     def pagar_boleto(self, valor_boleto:float) -> bool:
@@ -41,6 +62,7 @@ class Conta:
         self.saldo += qtd
 
         return True
+
 
     def criar_alterar_chave_pix(self, chave_pix:str) -> bool:
         
