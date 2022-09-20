@@ -23,7 +23,7 @@ class Banco:
 
         return True
 
-    def acessar_conta(self, cpf: str, senha: str) -> Conta:
+    def acessar_conta_cpf(self, cpf: str, senha: str) -> Conta:
         '''Dado um cpf e senha, procurar a conta na lista de clientes e retornar a conta'''
 
         for conta in self.lista_clientes:
@@ -42,5 +42,18 @@ class Banco:
             if cliente == conta:
 
                 return cliente.renda * 3
+
+        return False
+
+    def fazer_pix(self, chave_pix_destino:str, qtd:float, conta:Conta) -> bool:
+
+        if conta.saldo >= qtd:
+            for cliente in self.lista_clientes:
+                if chave_pix_destino == cliente.chave_pix:
+
+                    conta.saldo -= qtd
+                    cliente.saldo += qtd
+
+                    return True
 
         return False
