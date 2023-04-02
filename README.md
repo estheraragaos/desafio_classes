@@ -6,7 +6,7 @@ Projeto desnvolvido para estudo do paradigma de programação orientado a objeto
 
 <br>
 
-No presente projeto, foi desenvolvido a simulação de uma entidade financeira, criando suas relações para efetuar transações cotidianas de um banco comum. As operações foram separadas em resposabilidades de Conta e Cartão de Crédito para serem trabalhadas dentro de uma instância de Banco.
+No presente projeto, foi desenvolvido a simulação de uma entidade financeira, criando suas relações para efetuar transações cotidianas de um banco comum. As operações foram separadas em responsabilidades de Conta e Cartão de Crédito para serem trabalhadas dentro de uma instância de Banco.
 
 <br>
 
